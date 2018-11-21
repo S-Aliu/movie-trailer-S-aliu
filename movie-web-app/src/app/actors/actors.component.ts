@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Actor } from './actor';
+import { ALL_ACTORS } from './real-actors';
 
 @Component({
   selector: 'app-actors',
@@ -9,7 +10,7 @@ import { Actor } from './actor';
 })
 export class ActorsComponent implements OnInit {
 
-  actors: Actor[];
+  actors = ALL_ACTORS;
 
   constructor() { }
 

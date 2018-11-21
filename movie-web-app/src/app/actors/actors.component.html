@@ -1,18 +1,15 @@
 <div class="container">
-<p>
-  actors works!
-</p>
 
 
 <div class="actors">
   <div class="row justify-content-around">
     <div *ngFor="let actor of actors">
-      <div class="col-lg-4">
-
-          <img src="{{actor.path}}">
-
+      <div class="col-md-4 col-lg-4">
+        <!-- <a routerLink="/actor-detail"> -->
+          <img class="sizer" src="{{actor.path}}">
+        <!-- </a> -->
         <div class="row justify-content-around">
-          <div class="col-lg-4">
+          <div class="col-md-4 col-lg-4">
             {{actor.name}}
           </div>
         </div>
