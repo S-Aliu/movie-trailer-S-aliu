@@ -1,16 +1,45 @@
-<!-- <div class="container"> -->
+<div class="container">
+  <section class="jumbotron text-center bg-light">
+    <div class="container">
+      <h1 class="jumbotron-heading">Choose an actor</h1>
+      <p class="lead text-muted">
+        With <span class="font-italic">Trailers For You</span>® you can easily navigate through the information provided on your favorite actors.
+      </p>
+    </div>
+  </section>
+</div>
+
 <div class="actors">
   <div class="row justify-content-around">
     <div *ngFor="let actor of actors">
-      <div class="col-md-4 col-lg-4">
-        <img class="sizer" src="{{actor.path}}">
-        <div class="row justify-content-around" style="width:200px;padding-top:10px;">
-          <div class="col-md-4 col-lg-4">
-            {{actor.name}}
+      <div class="col-md-12 col-lg-12">
+        <div class="card mb-4 box-shadow">
+          <!-- <img class="sizer" src="{{actor.path}}"> -->
+          <img class="card-img-top" src="{{actor.path}}" style="height:300px;width: auto;display:block;">
+          <div class="row justify-content-around" style="width:200px;padding-top:10px;">
+            <div class="col-md-12 col-lg-12">
+
+              <div class="card-body">
+                <p class="card-text">
+                  {{actor.name}}
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span style="margin-right:40px;font-size:150%;"><small class="text-muted">{{actor.id}}</small></span>
+                  <div class="btn-group">
+                    <!-- link to bio here -->
+                    <button type="button" routerLink="/app" class="btn btn-sm btn-outline-secondary">Bio</button>
+                    <!-- link to movies here  -->
+                    <a routerLink="/app" class="btn btn-sm btn-outline-secondary">Movies</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
+
       </div>
     </div>
+
   </div>
 </div>
-<!-- </div> -->
