@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-//import activated route, actor and actor service 
+import { ActivatedRoute } from  '@angular/router';
+
+import { Actor } from '../actors/actor';
+import { ActorService } from '../actor.service';
+
+
+
 @Component({
   selector: 'app-actor-detail',
   templateUrl: './actor-detail.component.html',
@@ -7,9 +13,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActorDetailComponent implements OnInit {
 
-  constructor() { }
+  actor: ALL_ACTORS;
+
+  constructor(
+    private actorService: ActorService,
+     private route: ActivatedRoute,
+  ) { }
 
   ngOnInit() {
+    this.getActor();
+  }
+
+  getActor(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    //USE ROUTE TOMGET ACTOR ID
+    this.actor = this.actorService.getActor(id);
   }
 
 }
