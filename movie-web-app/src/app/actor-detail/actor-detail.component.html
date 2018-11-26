@@ -1,6 +1,47 @@
-<h2>{{actor.name}}</h2>
-<ul>
-  <li *ngFor="let movie of actor.movies">
-    <a href="{{movie.trailerURL}}">{{movie.name}}</a>
-  </li>
-</ul>
+<!-- <div class="container">
+  <div class="row">
+
+    <div class="col-md-12 col-lg-12">
+
+      <div class="card">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div> -->
+
+<div class="actors">
+<h1 class="title text-center" style="margin-bottom: 20px;">{{actor.name}}</h1>
+  <div class="row justify-content-around">
+    <div *ngFor="let movie of actor.movies">
+      <div class="col-md-12 col-lg-12">
+
+        <div class="card" style="border-color: black;">
+
+          <img class="card-img-top rounded" src="{{movie.path}}" style="height:400px;width: auto;display:block;">
+          <div class="row justify-content-around" style="width:200px;padding-top:10px;">
+            <div class="col-md-12 col-lg-12">
+
+              <div class="card-body">
+                <p class="card-title" style="width:250px;">
+                  {{movie.name}}
+                </p>
+                <a href="{{movie.trailerURL}}" class="btn btn-primary">see the trailer >></a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
