@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from  '@angular/router';
 
 import { Actor } from '../actors/actor';
+import { ALL_ACTORS } from '../actors/real-actors';
 import { ActorService } from '../actor.service';
 
 
@@ -13,7 +14,7 @@ import { ActorService } from '../actor.service';
 })
 export class ActorDetailComponent implements OnInit {
 
-  actor: ALL_ACTORS;
+  actor: Actor;
 
   constructor(
     private actorService: ActorService,
