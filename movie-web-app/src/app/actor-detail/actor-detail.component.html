@@ -16,9 +16,9 @@
 
   </div>
 </div> -->
-
+<div class="container">
 <div class="actors">
-<h1 class="title text-center" style="margin-bottom: 20px;">{{actor.name}}</h1>
+<h1 class="title text-center" style="margin-bottom: 40px;">{{actor.name}}</h1>
   <div class="row justify-content-around">
     <div *ngFor="let movie of actor.movies">
       <div class="col-md-12 col-lg-12">
@@ -29,14 +29,15 @@
           <div class="row justify-content-around" style="width:200px;padding-top:10px;">
             <div class="col-md-12 col-lg-12">
 
-              <div class="card-body">
+              <div class="card-body" style=" width: 290px; ">
                 <p class="card-title" style="width:250px;">
                   {{movie.name}}
                 </p>
+                <p>{{movie.summary}}</p>
                 <a href="{{movie.trailerURL}}" class="btn btn-primary">see the trailer >></a>
               </div>
 
-            </div>
+            <!-- </div> -->
           </div>
         </div>
 
@@ -44,4 +45,5 @@
     </div>
 
   </div>
+</div>
 </div>
