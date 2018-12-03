@@ -7,42 +7,35 @@
       </p>
     </div>
   </section>
-</div>
 
-<hr class="style15" style="width: 1315px;margin-bottom: 30px;">
 
-<div class="actors">
-  <div class="row justify-content-around">
-    <div *ngFor="let actor of actors">
-      <div class="col-md-12 col-lg-12">
+  <hr class="style15" style="margin-bottom: 30px;">
+
+
+
+
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let actor of actors">
+
 
         <div class="card mb-4 box-shadow">
-
-          <img class="card-img-top rounded" src="{{actor.path}}" style="height:300px;width: auto;display:block;">
-          <div class="row justify-content-around" style="width:200px;padding-top:10px;">
-            <div class="col-md-12 col-lg-12">
-
-              <div class="card-body">
-                <p class="card-text">
-                  {{actor.name}}
-                </p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <span style="margin-right:50px;font-size:150%;"><small class="text-muted">{{actor.id}}</small></span>
-                  <div class="btn-group">
-                    <!-- link to bio here -->
-                    <button type="button" routerLink="/" class="btn btn-sm btn-outline-secondary">Bio</button>
-                    <!-- link to movies here  -->
-                    <a routerLink="/detail/{{actor.id}}" class="btn btn-sm btn-outline-secondary">Movies</a>
-                  </div>
-                </div>
-              </div>
-
+        <!-- img -->
+        <img class="card-img-top rounded" src="{{actor.path}}">
+        <!-- body -->
+        <div class="card-body">
+          <p class="card-text">{{actor.name}}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <small class="text-muted">{{actor.id}}</small>
+            <div class="btn-group">
+              <!-- link to bio here -->
+              <button type="button" routerLink="/" class="btn btn-sm btn-outline-secondary">Bio</button>
+              <!-- link to movies here  -->
+              <a routerLink="/detail/{{actor.id}}" class="btn btn-sm btn-outline-secondary">Movies</a>
             </div>
           </div>
         </div>
-
       </div>
     </div>
-
   </div>
+
 </div>

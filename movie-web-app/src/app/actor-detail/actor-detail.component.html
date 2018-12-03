@@ -1,49 +1,24 @@
-<!-- <div class="container">
-  <div class="row">
 
-    <div class="col-md-12 col-lg-12">
-
-      <div class="card">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</div> -->
 <div class="container">
-<div class="actors">
-<h1 class="title text-center" style="margin-bottom: 40px;">{{actor.name}}</h1>
-  <div class="row justify-content-around">
-    <div *ngFor="let movie of actor.movies">
-      <div class="col-md-12 col-lg-12">
 
-        <div class="card" style="border-color: black;">
+<div class="row ">
+  <div class="col-sm-4" *ngFor="let movie of actor.movies">
 
-          <img class="card-img-top rounded" src="{{movie.path}}" style="height:auto;width: 280px;display:block;">
-          <div class="row justify-content-around" style="width:200px;padding-top:10px;">
-            <div class="col-md-12 col-lg-12">
 
-              <div class="card-body" style=" width: 290px; ">
-                <p class="card-title" style="width:250px;">
-                  {{movie.name}}
-                </p>
-                <p>{{movie.summary}}</p>
-                <a href="{{movie.trailerURL}}" class="btn btn-primary">learn more >></a>
-              </div>
-
-            <!-- </div> -->
-          </div>
-        </div>
-
+      <div div class="card" style="border-color: black;">
+      <!-- img -->
+      <img class="card-img-top rounded" src="{{movie.path}}">
+      <!-- body -->
+      <div class="card-body">
+        <p class="card-title">{{movie.name}}</p>
+        <p class="card-text">{{movie.summary}}</p>
+        <a href="{{movie.trailerURL}}" class="btn btn-primary">learn more >></a>
       </div>
     </div>
+
+
 
   </div>
 </div>
+
 </div>
