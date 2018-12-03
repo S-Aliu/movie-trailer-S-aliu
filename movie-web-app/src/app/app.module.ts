@@ -9,12 +9,14 @@ import { ActorsComponent } from './actors/actors.component';
 import { ActorDetailComponent } from './actor-detail/actor-detail.component';
 
 import { MovieService } from './movie.service';
+import { PopularComponent } from './popular/popular.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ActorsComponent,
-    ActorDetailComponent
+    ActorDetailComponent,
+    PopularComponent
   ],
   imports: [
     BrowserModule,

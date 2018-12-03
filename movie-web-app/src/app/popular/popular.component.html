@@ -1,0 +1,37 @@
+<div class="container" style="margin-top: 80px;">
+<!-- title -->
+<section class="jumbotron text-center bg-light">
+  <div class="container">
+    <h1 class="jumbotron-heading">Movies</h1>
+    <p class="lead text-muted">
+      With <span class="font-italic">Trailers For You</span>® discover movies.
+    </p>
+  </div>
+</section>
+<hr style="margin-bottom: 30px;">
+  <!-- title -->
+  <div class="row">
+      <div class="col-sm-12">
+        <h1>Popular Movies</h1>
+      </div>
+    </div>
+<!-- pop movies  -->
+    <div class="row">
+    <div  class="col-sm-4" *ngFor="let popular of popular_movies; let x = index">
+      <div *ngIf="x < 6">
+        <div class="card mt-3 mb-3">
+          <div class="card-header text-center">
+            {{ popular.release_date | date:'mediumDate' }}
+          </div>
+          <div class="card-body">
+            <img class="card-img-top img-fluid" src="https://image.tmdb.org/t/p/w500/{{ popular.poster_path }}" alt="{{ popular.original_title }}" style="height: 460px">
+            <p class="text-center">{{ popular.original_title }}</p>
+            <p class="card-text">{{popular.overview}}</p>
+            <a routerLink="/movie/{{ popular.id }}" href="#" class="btn btn-block btn-info">Movie Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
