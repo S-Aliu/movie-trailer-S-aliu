@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ActorsComponent } from './actors/actors.component';
 import { ActorDetailComponent } from './actor-detail/actor-detail.component';
 
+import { MovieService } from './movie.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,7 @@ import { ActorDetailComponent } from './actor-detail/actor-detail.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ MovieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
