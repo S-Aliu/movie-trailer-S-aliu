@@ -1,17 +1,19 @@
 
 <div class="container">
 
-<div class="row ">
-  <div class="col-sm-4" *ngFor="let movie of actor.movies">
+<div *ngIf="people">
+  <div class="row">
+  <div class="col-sm-12">
 
 
-      <div div class="card" style="border-color: black;">
+      <div div class="card mt-5 mb-5" style="border-color: black;">
+        <div class="card-header">{{people.name}}</div>
       <!-- img -->
-      <img class="card-img-top rounded" src="{{movie.path}}">
+      <img class="card-img-top rounded" src="{{people.profile_path}}">
       <!-- body -->
       <div class="card-body">
-        <p class="card-title">{{movie.name}}</p>
-        <p class="card-text">{{movie.summary}}</p>
+        <p class="card-title">About {{people.name}}</p>
+        <p class="card-text">Birthday: {{people.birthday}}, Place of Birth: {{people.place_of_birth}}<br>{{people.biography}}</p>
         <a href="{{movie.trailerURL}}" class="btn btn-primary">learn more >></a>
       </div>
     </div>
@@ -20,5 +22,5 @@
 
   </div>
 </div>
-
+</div>
 </div>
