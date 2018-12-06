@@ -15,15 +15,18 @@ export class PopularComponent implements OnInit {
 
   constructor(public movieService: MovieService) {
     //get pop movies
+    // get pop movies
     this.movieService.getPopularMovies().subscribe(data => {
       this.popular_movies = data['results'];
+
     });
+
 
   }
 
 
-  // search function to collect search results 
-  searchMovies() {
+  // search function to collect search results
+  searchMovie() {
     this.movieService.searchMovie(this.movie).subscribe(data => {
       this.search_result = data['results'];
     });

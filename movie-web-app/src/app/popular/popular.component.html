@@ -19,7 +19,7 @@
           <input type="text" class="form-control" placeholder="Search Movies" name="movie" [(ngModel)]="movie">
         </div>
         <div class="col-2">
-          <button class="btn-block btn-info form-control" (click)="searchMovies()">Search</button>
+          <button class="btn-block btn-info form-control" (click)="searchMovie()">Search</button>
         </div>
       </div>
     </form>
@@ -57,10 +57,11 @@
             {{ popular.release_date | date:'mediumDate' }}
           </div>
           <div class="card-body">
-            <img class="card-img-top img-fluid" src="https://image.tmdb.org/t/p/w500/{{ popular.poster_path }}" alt="{{ popular.original_title }}" style="height: 460px">
-            <p class="text-center">{{ popular.original_title }}</p>
+            <img class="view overlay zoom card-img-top img-fluid sizer" src="https://image.tmdb.org/t/p/w500/{{ popular.poster_path }}" alt="{{ popular.original_title }}" style="height: 460px">
+
+          <p class="text-center">{{ popular.original_title }}</p>
             <p class="card-text">{{popular.overview}}</p>
-            <a routerLink="/movie/{{ popular.id }}" href="#" class="btn btn-block btn-info">Movie Details</a>
+
           </div>
         </div>
       </div>
