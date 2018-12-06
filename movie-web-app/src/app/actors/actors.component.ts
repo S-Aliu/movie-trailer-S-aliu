@@ -16,9 +16,18 @@ export class ActorsComponent implements OnInit {
 
   constructor(public movieService: MovieService) {
     this.people = []
+
+    for (var i = 1; i < 40; i++) {
+      if ([15, 16, 17, 21, 25].includes(i)) {
+        console.log('no data from api on actor of id:' + i)
+      } else {
         this.movieService.getActor(i).subscribe(data => {
           this.people.push(data);
         });
+      }
+    }
     console.log(this.people)
+
   }
+  ngOnInit() {}
 }
