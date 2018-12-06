@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Actor } from './actor';
-import { ALL_ACTORS } from './real-actors'
-import { ActorService } from '../actor.service';
+
+import { MovieService } from '../movie.service';
 
 @Component({
   selector: 'app-actors',
@@ -11,16 +10,15 @@ import { ActorService } from '../actor.service';
 })
 export class ActorsComponent implements OnInit {
 
-  actors = ALL_ACTORS;
+  people: any;
 
-  constructor(private actorService: ActorService) { }
 
-  ngOnInit() {
-    this.getActors();
+
+  constructor(public movieService: MovieService) {
+    this.people = []
+        this.movieService.getActor(i).subscribe(data => {
+          this.people.push(data);
+        });
+    console.log(this.people)
   }
-
-  getActors(): void {
-    this.actors = this.actorService.getActors();
-  }
-
 }
