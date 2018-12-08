@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActorService } from '../actor.service';
+
 import { MovieService } from '../movie.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { MovieService } from '../movie.service';
 export class ActorsComponent implements OnInit {
 
   people: any;
+
 
 
 
