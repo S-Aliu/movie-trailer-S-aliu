@@ -34,7 +34,7 @@
             {{ movie.release_date | date:'mediumDate':'yyyy' }}
           </div>
           <div class="card-body">
-            <img class="card-img-top img-fluid" src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="{{ movie.original_title }}" style="height: 460px">
+            <img class="card-img-top img-fluid" src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="Image not found" onerror="this.src='../assets/img/notfound.png';" >
             <p class="text-center">{{ movie.original_title }}</p>
             <p class="card-text">{{movie.overview}}</p>
           </div>
@@ -57,7 +57,7 @@
             {{ popular.release_date | date:'mediumDate' }}
           </div>
           <div class="card-body">
-            <img class="view overlay zoom card-img-top img-fluid sizer" src="https://image.tmdb.org/t/p/w500/{{ popular.poster_path }}" alt="{{ popular.original_title }}" style="height: 460px">
+            <img class="card-img-top img-fluid sizer" src="https://image.tmdb.org/t/p/w500/{{ popular.poster_path }}" alt="Image not found" onerror="this.src='../assets/img/notfound.png';">
 
           <p class="text-center">{{ popular.original_title }}</p>
             <p class="card-text">{{popular.overview}}</p>
