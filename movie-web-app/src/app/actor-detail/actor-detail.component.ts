@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from  '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
-import { Actor } from '../actors/actor';
-import { ALL_ACTORS } from '../actors/real-actors';
-import { ActorService } from '../actor.service';
-
+import { MovieService } from '../movie.service';
 
 
 @Component({
@@ -14,21 +11,19 @@ import { ActorService } from '../actor.service';
 })
 export class ActorDetailComponent implements OnInit {
 
-  actor: Actor;
 
-  constructor(
-    private actorService: ActorService,
-     private route: ActivatedRoute,
-  ) { }
+   people :any;
+
+  constructor(private router: ActivatedRoute, private movieService: MovieService) { }
 
   ngOnInit() {
-    this.getActor();
-  }
-
-  getActor(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    //USE ROUTE TOMGET ACTOR ID
-    this.actor = this.actorService.getActor(id);
+    this.router.params.subscribe((params) => {
+     const id = params['id'];
+     this.movieService.getActor(id).subscribe(data => {
+       this.people = data;
+       // console.log(data);
+     });
+   });
   }
 
 }

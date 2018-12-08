@@ -1,24 +1,38 @@
-
 <div class="container">
 
-<div class="row ">
-  <div class="col-sm-4" *ngFor="let movie of actor.movies">
-
-
-      <div div class="card" style="border-color: black;">
-      <!-- img -->
-      <img class="card-img-top rounded" src="{{movie.path}}">
-      <!-- body -->
+  <div *ngIf="people">
+    <div class="card mt-5 mb-5">
+      <div class="card-header">{{people.name}}</div>
       <div class="card-body">
-        <p class="card-title">{{movie.name}}</p>
-        <p class="card-text">{{movie.summary}}</p>
-        <a href="{{movie.trailerURL}}" class="btn btn-primary">learn more >></a>
+        <div class="row">
+
+
+          <div class="col-md-7">
+
+            <ul class="list-group">
+              <li class="list-group-item" *ngIf="people.also_known_as.length !== 0">Name(s): {{people.also_known_as}} </li>
+              <li class="list-group-item" *ngIf="people.known_for_department !== null">Known for Department of {{people.known_for_department}}</li>
+              <li class="list-group-item" *ngIf="people.birthday !== null">Date of Birth: {{people.birthday}}</li>
+              <li class="list-group-item" *ngIf="people.place_of_birth !== null">Place of Birth: {{people.place_of_birth}}</li>
+              <li class="list-group-item" *ngIf="people.homepage !== null"><a class="btn btn-secondary" href="{{people.homepage}}" role="button">learn more ></a></li>
+              <li class="list-group-item" *ngIf="this.people.biography.length !== 0">Bio: <br>{{people.biography}}</li>
+              <!-- <li class="list-group-item" *ngIf="people.place_of_birth !== null"></li>
+            <li class="list-group-item"></li> -->
+            </ul>
+
+          </div>
+
+          <div class="col-md-5">
+            <!-- img -->
+
+              <img class="img-fluid img-thumbnail rounded" src="https://image.tmdb.org/t/p/w500/{{people.profile_path}}" alt="Image not found" onerror="this.src='../assets/img/notfound.png';">
+
+          </div>
+
+        </div>
+
       </div>
     </div>
-
-
-
   </div>
-</div>
 
 </div>
